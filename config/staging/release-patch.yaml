@@ -8,4 +8,4 @@ spec:
     config:
       MyKey: "This is a value which can be configured at runtime."
     features:
-      Beta: "true"
+      Beta: "false"
