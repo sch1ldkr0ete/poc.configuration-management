@@ -19,6 +19,6 @@ spec:
     config:
       MyKey: "This application is running in the production environment."
     features:
-      Beta: "false"
+      Beta: "true"
     ingress:
       host: configuration-management-poc.production.localhost
