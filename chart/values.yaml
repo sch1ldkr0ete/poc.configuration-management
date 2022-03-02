@@ -27,11 +27,6 @@ ingress:
   enabled: true
   className: ""
   annotations: {}
-  hosts:
-    - host: configuration-management-poc.localhost
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
   tls: []
 
 resources: {}

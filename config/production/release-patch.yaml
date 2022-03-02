@@ -7,12 +7,13 @@ spec:
   targetNamespace: staging
   values:
     config:
-      MyKey: "This is a value which can be configured at runtime."
+      MyKey: "This is a value which can be configured at runtime production."
     features:
       Beta: "false"
+
     ingress:
       hosts:
-        - host: configuration-management-poc.staging.localhost
+        - host: configuration-management-poc.production.localhost
           paths:
             - path: /
               pathType: ImplementationSpecific
