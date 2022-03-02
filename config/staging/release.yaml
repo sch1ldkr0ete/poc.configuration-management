@@ -17,9 +17,9 @@ spec:
       repository: sch1ldkr0ete/config-management-poc
       tag: "v1.0.3"
     config:
-      MyKey: "This is a value which can be configured at runtime."
+      MyKey: "This application is running in the staging environment."
     features:
-      Beta: "false"
+      Beta: "true"
     ingress:
       hosts:
         - host: configuration-management-poc.staging.localhost

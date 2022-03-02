@@ -17,7 +17,7 @@ spec:
       repository: sch1ldkr0ete/config-management-poc
       tag: "v1.0.3"
     config:
-      MyKey: "This is a value which can be configured at runtime production."
+      MyKey: "This application is running in the production environment."
     features:
       Beta: "false"
     ingress:
