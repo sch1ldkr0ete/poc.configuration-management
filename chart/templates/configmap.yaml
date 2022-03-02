@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "..fullname" . }}
+  namespace: default
+data:
+  MyConfig.json: |
+    {
+      {{- range $key, $value := .Values.config }}
+      {{ quote $key }}: {{ quote $value }},
+      {{- end }}
+      "FeatureManagement": {
+        {{- range $key, $value := .Values.features }}
+        {{ quote $key }}: {{ quote $value }},
+        {{- end }}
+      }
+    }

@@ -6,7 +6,7 @@ builder.Services.AddFeatureManagement();
 
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
-    config.AddJsonFile("MyConfig.json", optional: true, reloadOnChange: true);
+    config.AddJsonFile("/app/config/MyConfig.json", optional: true, reloadOnChange: true);
 });
 
 // Add services to the container.

@@ -12,5 +12,4 @@ ARG project
 WORKDIR /app
  
 COPY --from=build-env /app/out .
-COPY ./source/MyConfig.json .
 ENTRYPOINT ["dotnet", "PocConfigurationManagement.dll"]

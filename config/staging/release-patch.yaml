@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: configuration-management
+  namespace: default
+spec:
+  chart:
+    values:
+      config:
+        MyKey: "This is a value which can be configured at runtime."
+      features:
+        Beta: "true"
