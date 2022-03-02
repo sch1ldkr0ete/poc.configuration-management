@@ -4,6 +4,14 @@ metadata:
   name: configuration-management
   namespace: staging
 spec:
+  chart:
+    spec:
+      chart: ./chart
+      sourceRef:
+        kind: GitRepository
+        name: configuration-management
+        namespace: flux-system
+  interval: 1m0s
   values:
     image:
       repository: sch1ldkr0ete/config-management-poc
