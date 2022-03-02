@@ -4,7 +4,7 @@ metadata:
   name: configuration-management
   namespace: flux-system
 spec:
-  targetNamespace: staging
+  targetNamespace: production
   values:
     config:
       MyKey: "This is a value which can be configured at runtime production."
