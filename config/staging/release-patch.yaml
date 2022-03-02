@@ -4,9 +4,8 @@ metadata:
   name: configuration-management
   namespace: default
 spec:
-  chart:
-    values:
-      config:
-        MyKey: "This is a value which can be configured at runtime."
-      features:
-        Beta: "true"
+  values:
+    config:
+      MyKey: "This is a value which can be configured at runtime."
+    features:
+      Beta: "true"
