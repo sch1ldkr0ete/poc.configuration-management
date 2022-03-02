@@ -21,8 +21,4 @@ spec:
     features:
       Beta: "false"
     ingress:
-      hosts:
-        - host: configuration-management-poc.production.localhost
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
+      host: configuration-management-poc.production.localhost

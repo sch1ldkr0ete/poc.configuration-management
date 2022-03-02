@@ -21,8 +21,4 @@ spec:
     features:
       Beta: "true"
     ingress:
-      hosts:
-        - host: configuration-management-poc.staging.localhost
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
+      host: configuration-management-poc.staging.localhost
