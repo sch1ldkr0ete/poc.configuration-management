@@ -15,7 +15,7 @@ spec:
   values:
     image:
       repository: sch1ldkr0ete/config-management-poc
-      tag: "v1.0.3"
+      tag: "v1.1.0"
     config:
       MyKey: "This application is running in the staging environment."
     features:
