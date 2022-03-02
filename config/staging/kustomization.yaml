@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - ../base
-patchesStrategicMerge:
-  - release-patch.yaml
+  - release.yaml
