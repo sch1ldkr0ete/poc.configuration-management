@@ -17,8 +17,8 @@ spec:
       repository: sch1ldkr0ete/config-management-poc
       tag: "v1.1.0"
     config:
-      MyKey: "This application is running in the production environment."
+      MyKey: "This application is running in the production environment. Uli mag webhooks"
     features:
-      Beta: "true"
+      Beta: "false"
     ingress:
       host: configuration-management-poc.production.localhost
