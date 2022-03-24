@@ -17,4 +17,4 @@ spec:
       repository: sch1ldkr0ete/config-management-poc
       tag: "v1.1.0"
     features:
-      Beta: "false"
+      Beta: "true"

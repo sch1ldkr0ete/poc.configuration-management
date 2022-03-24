@@ -7,4 +7,4 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  url: https://github.com/sch1ldkr0ete/poc.configuration-management.git
+  url: https://dev.azure.com/chbeck-ohg/Elektronisches%20Publizieren/_git/poc.configuration-management
