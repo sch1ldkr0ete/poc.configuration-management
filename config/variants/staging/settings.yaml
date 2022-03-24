@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: configuration-management
-  namespace: staging
+  namespace: configuration-management-poc
 spec:
   chart:
     spec:
@@ -13,12 +13,5 @@ spec:
         namespace: flux-system
   interval: 1m0s
   values:
-    image:
-      repository: sch1ldkr0ete/config-management-poc
-      tag: "v1.1.0"
-    config:
-      MyKey: "This application is running in the staging environment."
-    features:
-      Beta: "true"
     ingress:
       host: configuration-management-poc.staging.localhost
