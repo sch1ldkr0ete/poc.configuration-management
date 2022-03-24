@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: configuration-management
+  namespace: configuration-management
+spec:
+  values:
+    config:
+      MyKey: "This application runs in azure."

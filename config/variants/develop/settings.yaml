@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: configuration-management
+  namespace: config-management
+spec:
+  values:
+    ingress:
+      host: configuration-management-poc.dev-online.beck.de

@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: configuration-management
+  namespace: configuration-management
+spec:
+  chart:
+    spec:
+      chart: ./chart
+      sourceRef:
+        kind: GitRepository
+        name: configuration-management
+        namespace: flux-system
+  interval: 1m0s
+  values:
+    image:
+      repository: sch1ldkr0ete/config-management-poc
+      tag: "v1.1.0"
+    features:
+      Beta: "false"
