@@ -9,4 +9,4 @@ components:
 - ../../variants/azure
 
 patchesStrategicMerge:
-- release.yml
+- release.yaml
