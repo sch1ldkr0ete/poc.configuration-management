@@ -4,17 +4,7 @@ metadata:
   name: configuration-management
   namespace: configuration-management-poc
 spec:
-  chart:
-    spec:
-      chart: ./chart
-      sourceRef:
-        kind: GitRepository
-        name: configuration-management-poc
-        namespace: flux-system
-  interval: 1m0s
   values:
     image:
       repository: sch1ldkr0ete/config-management-poc
       tag: "v1.1.0"
-    features:
-      Beta: "true"

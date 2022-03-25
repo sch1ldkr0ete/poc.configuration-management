@@ -9,4 +9,5 @@ components:
 - ../../variants/azure
 
 patchesStrategicMerge:
-- release.yaml
+- application-version.yaml
+- feature-flags.yaml
