@@ -13,6 +13,8 @@ spec:
         namespace: flux-system
   interval: 1m0s
   values:
+    nodeSelector:
+      kubernetes.io/os: "linux"
     image:
       repository: sch1ldkr0ete/config-management-poc
       tag: "v1.1.0"
