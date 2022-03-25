@@ -9,7 +9,7 @@ spec:
       chart: ./chart
       sourceRef:
         kind: GitRepository
-        name: configuration-management
+        name: configuration-management-poc
         namespace: flux-system
   interval: 1m0s
   values:
