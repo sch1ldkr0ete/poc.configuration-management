@@ -13,7 +13,7 @@ variables:
 - name: minor
   value: 1
 
-name: $(major).$(minor).$(Rev:r)$(addTag)
+name: $(major).$(minor).$(Rev:r)
 
 stages:
 - stage:
