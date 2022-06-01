@@ -1,0 +1,42 @@
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+- name: dockerRegistryServiceConnection
+  value: '36f95206-263a-4369-8680-56018d807b76'
+- name: imageRepository
+  value: 'poc/configuration-management'
+- name: major
+  value: 1
+- name: minor
+  value: 1
+
+name: $(major).$(minor).$(Rev:r)$(addTag)
+
+stages:
+- stage:
+  displayName: Build & Push Container Image
+  jobs:  
+  - job:
+    displayName: Build & Push Container Image
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'build'
+        Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        buildContext: $(Build.SourcesDirectory)
+        tags: |
+          $(Build.BuildNumber)
+          latest
+    - task: Docker@2
+      inputs:
+        command: push
+        containerRegistry: $(dockerRegistryServiceConnection)
+        repository: $(imageRepository)
+        tags: |
+            $(Build.BuildNumber)
+            latest
