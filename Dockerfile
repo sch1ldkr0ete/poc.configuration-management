@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 
 WORKDIR /app
 
-COPY ./source .
+COPY ./src .
 RUN dotnet restore
 RUN dotnet publish PocConfigurationManagement.csproj -c Release -o out 
 
