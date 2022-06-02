@@ -1,42 +1,30 @@
-trigger: none
+trigger:
+- main
+- feature/*
+- bugfix/*
 
-pool:
-  vmImage: 'ubuntu-latest'
+resources:
+  repositories:
+  - repository: self
+  - repository: templates
+    type: git
+    name: templates.azure-pipelines
+    ref: refs/tags/1.6.3
 
 variables:
-- name: dockerRegistryServiceConnection
-  value: '36f95206-263a-4369-8680-56018d807b76'
 - name: imageRepository
   value: 'poc/configuration-management'
-- name: major
-  value: 1
-- name: minor
-  value: 1
-
-name: $(major).$(minor).$(Rev:r)
+- template: ci-ut-templates/branch-variables.yml@templates
 
 stages:
-- stage:
-  displayName: Build & Push Container Image
-  jobs:  
-  - job:
-    displayName: Build & Push Container Image
-    steps:
-    - task: Docker@2
-      inputs:
-        containerRegistry: '$(dockerRegistryServiceConnection)'
-        repository: '$(imageRepository)'
-        command: 'build'
-        Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        buildContext: $(Build.SourcesDirectory)
-        tags: |
-          $(Build.BuildNumber)
-          latest
-    - task: Docker@2
-      inputs:
-        command: push
-        containerRegistry: $(dockerRegistryServiceConnection)
-        repository: $(imageRepository)
-        tags: |
-            $(Build.BuildNumber)
-            latest
+- template: ci-ut-templates/get-git-version-template.yml@templates
+  parameters:
+    gitVersionConfigFilePath: 'gitversion.yaml'
+- template: ci-ut-templates/build-app-stage.yml@templates
+  parameters:
+    imageRepository: '$(imageRepository)'
+    projectPath: 'PocConfigurationManagement.csproj'
+- template: ci-ut-templates/build-push-image-stage.yml@templates
+  parameters:
+    imageRepository: '$(imageRepository)'
+    applicationName: 'PocConfigurationManagement'
