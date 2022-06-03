@@ -5,7 +5,7 @@ resources:
 - ../../base
 
 components:
-- ../../variants/staging
+- ../../variants/stagingaddxxxd
 - ../../variants/azure
 
 patchesStrategicMerge:
