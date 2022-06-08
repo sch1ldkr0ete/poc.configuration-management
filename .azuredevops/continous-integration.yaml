@@ -27,4 +27,4 @@ stages:
 - template: ci-ut-templates/build-push-image-stage.yml@templates
   parameters:
     imageRepository: '$(imageRepository)'
-    applicationName: 'src'
+    applicationName: 'PocConfigurationManagement'
