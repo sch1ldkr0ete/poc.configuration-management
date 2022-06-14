@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocConfigurationManagement", "PocConfigurationManagement\PocConfigurationManagement.csproj", "{4775B85C-E654-4323-9781-0AFCE451D077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocConfigurationManagement.Tests", "PocConfigurationManagement.Tests\PocConfigurationManagement.Tests.csproj", "{81E8D7C9-54E0-464C-9F58-13B656685826}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4775B85C-E654-4323-9781-0AFCE451D077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4775B85C-E654-4323-9781-0AFCE451D077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4775B85C-E654-4323-9781-0AFCE451D077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4775B85C-E654-4323-9781-0AFCE451D077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E8D7C9-54E0-464C-9F58-13B656685826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E8D7C9-54E0-464C-9F58-13B656685826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E8D7C9-54E0-464C-9F58-13B656685826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E8D7C9-54E0-464C-9F58-13B656685826}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

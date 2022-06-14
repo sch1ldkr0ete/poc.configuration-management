@@ -1,15 +1,22 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS restore
 WORKDIR /app
 
-COPY ./src .
+COPY source/*.sln .
+COPY source/PocConfigurationManagement/*.csproj ./PocConfigurationManagement/
+COPY source/PocConfigurationManagement.Tests/*.csproj ./PocConfigurationManagement.Tests/
 RUN dotnet restore
-RUN dotnet publish PocConfigurationManagement.csproj -c Release -o out 
+
+FROM restore AS build
+COPY source/. .
+RUN dotnet build -c Release --no-restore
+
+FROM build AS test
+RUN dotnet test -c Release --no-build
+
+FROM build AS publish
+RUN dotnet publish -c Release --no-build -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-ARG project
-
 WORKDIR /app
- 
-COPY --from=build-env /app/out .
+COPY --from=publish /app/out .
 ENTRYPOINT ["dotnet", "PocConfigurationManagement.dll"]
