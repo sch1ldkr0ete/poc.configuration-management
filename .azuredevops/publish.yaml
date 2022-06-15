@@ -21,7 +21,7 @@ stages:
 - template: ci-ut-templates/build-app-stage.yml@templates
   parameters:
     imageRepository: '$(imageRepository)'
-    projectPath: 'PocConfigurationManagement.csproj'
+    projectPath: 'source/PocConfigurationManagement/PocConfigurationManagement.csproj'
 - template: ci-ut-templates/build-push-image-stage.yml@templates
   parameters:
     imageRepository: '$(imageRepository)'
