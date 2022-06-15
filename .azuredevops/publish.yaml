@@ -22,7 +22,7 @@ stages:
   parameters:
     imageRepository: '$(imageRepository)'
     projectPath: 'source/PocConfigurationManagement'
-- template: ci-ut-templates/unit-tests-stage.DotNetCore.yml@templates-azure-pipelines
+- template: ci-ut-templates/unit-tests-stage.DotNetCore.yml@templates
   parameters:
     testProjectPath: 'source/PocConfigurationManagement.Tests'
 - template: ci-ut-templates/build-push-image-stage.yml@templates
