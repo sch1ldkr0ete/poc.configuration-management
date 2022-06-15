@@ -11,7 +11,10 @@ COPY source/. .
 RUN dotnet build -c Release --no-restore
 
 FROM build AS test
-RUN dotnet test -c Release --no-build
+RUN dotnet test -c Release --no-build --logger trx
+
+FROM scratch as export-test-results
+COPY --from=test app/PocConfigurationManagement.Tests/TestResults/*.trx .
 
 FROM build AS publish
 RUN dotnet publish -c Release --no-build -o out

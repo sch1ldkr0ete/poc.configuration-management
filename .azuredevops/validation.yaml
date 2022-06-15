@@ -1,0 +1,10 @@
+trigger:
+- none
+
+steps:
+- task: Docker@2
+  displayName: Unit Tests
+  inputs:
+    command: 'build'
+    arguments: '--target export-test-results --output type=local,dest=out .'
+    buildContext: '$(Build.SourcesDirectory)'
