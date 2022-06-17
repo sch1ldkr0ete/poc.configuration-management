@@ -1,6 +1,12 @@
 trigger:
 - main
 
+parameters:
+- name: publish
+  displayName: Publish Image
+  type: boolean
+  default: false
+
 resources:
   repositories:
   - repository: self
@@ -13,6 +19,11 @@ variables:
 - name: imageRepository
   value: 'poc/configuration-management'
 - template: ci-ut-templates/branch-variables.yml@templates
+- name: pushImage
+  ${{ if or(eq(variables.isMainBranch, 'true'), eq(variables.isPR, 'true'), eq(variables.isHotfix, 'true'), eq(parameters.publish, 'true'))}}:
+    value: true
+  ${{ else }}:
+    value: false
 
 stages:
 - template: ci-ut-templates/get-git-version-template.yml@templates
