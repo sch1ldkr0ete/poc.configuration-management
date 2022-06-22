@@ -1,5 +1,18 @@
 trigger:
-- main
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - source
+
+pr:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - source
 
 parameters:
 - name: publish
