@@ -26,6 +26,6 @@ Jira-Issue: [Issue-ID](Link to Issue)
 
 Please make sure you have completed the relevant tasks for this PR:
 
-- [] Your code builds clean without any errors or warnings
-- [] The Unit tests are passing
-- [] You have added unit tests
+- [ ] Your code builds clean without any errors or warnings
+- [ ] The Unit tests are passing
+- [ ] You have added unit tests
