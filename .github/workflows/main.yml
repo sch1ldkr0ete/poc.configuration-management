@@ -1,15 +1,9 @@
 name: Create and publish a Docker image
 
-#on:
-#  push:
-#    branches: ['release']
-#
-
-
 on:
-  pull_request:
-    types: [opened, reopened]
-
+  push:
+    branches:
+    - '**'
 
 env:
   REGISTRY: ghcr.io
@@ -46,5 +40,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: sha-${{ github.event.pull_request.head.sha }}
+        tags: ${{ steps.meta.outputs.labels }}
         labels: ${{ steps.meta.outputs.labels }}
