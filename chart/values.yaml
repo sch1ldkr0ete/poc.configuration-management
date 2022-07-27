@@ -26,8 +26,8 @@ service:
 ingress:
   enabled: true
   className: ""
-  annotations:
-    kubernetes.io/ingress.class: services-int
+  #annotations:
+  #  kubernetes.io/ingress.class: services-int
   tls: []
 
 resources: {}
